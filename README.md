@@ -27,10 +27,10 @@ API Endpoints
 1. Create Quiz
 Create a new quiz with questions and answer options.
 
-
+Endpoint: POST /api/quizzes
 
 ```bash
-    Endpoint: POST /api/quizzes
+ 
     curl --location 'http://localhost:7272/api/quizzes' \
     --header 'Content-Type: application/json' \
     --data '{
@@ -53,8 +53,9 @@ Create a new quiz with questions and answer options.
 2. Get Quiz
 Fetch a quiz by its ID. The correct answers will not be revealed.
 
-```bash
 Endpoint: GET /api/quizzes/:quizId
+
+```bash
     curl --location 'http://localhost:7272/api/quizzes/6778b58592190504b3d3a116'
 ```
 
