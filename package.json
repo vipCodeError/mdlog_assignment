@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "start": "node ./bin/www",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
@@ -34,5 +35,13 @@
     "react-paginate": "^8.2.0",
     "react-redux": "^9.1.2",
     "redux": "^5.0.1"
-  }
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+  "testEnvironment": "node",
+  "verbose": true
+}
 }
