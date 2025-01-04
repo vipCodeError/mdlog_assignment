@@ -1,4 +1,4 @@
-# Quiz Management System
+# Quiz
 
 A RESTful API backend service to manage and execute quizzes.
 
@@ -10,21 +10,27 @@ A RESTful API backend service to manage and execute quizzes.
 1. Install dependencies:
    ```bash
    npm install
+   ```
 2. Start the application:
    ```bash
    npm start
+   ```
 
 Run Tests:
 To execute the unit tests:
-    ```bash
+   ```bash
     npm test
+   ```
 
 API Endpoints
+
 1. Create Quiz
 Create a new quiz with questions and answer options.
 
-Endpoint: POST /api/quizzes
-    ```bash
+
+
+```bash
+    Endpoint: POST /api/quizzes
     curl --location 'http://localhost:7272/api/quizzes' \
     --header 'Content-Type: application/json' \
     --data '{
@@ -42,28 +48,36 @@ Endpoint: POST /api/quizzes
         }
         ]
     }'
+```
+
 2. Get Quiz
 Fetch a quiz by its ID. The correct answers will not be revealed.
 
+```bash
 Endpoint: GET /api/quizzes/:quizId
-    ```bash
     curl --location 'http://localhost:7272/api/quizzes/6778b58592190504b3d3a116'
+```
+
 3. Submit Answer
 Submit an answer for a specific question in a quiz. Returns immediate feedback on correctness.
 
 Endpoint: POST /api/quizzes/:quizId/questions/:questionId/answer
-    ```bash
+    
+```bash
     curl --location 'http://localhost:7272/api/quizzes/6778baca0890f501ecd1f705/questions/6778baca0890f501ecd1f707/answer' \
     --header 'Content-Type: application/json' \
     --data '{
         "selected_option": 1,
         "user_id": "12345"
     }'
+```
+
 4. Get Results
 Retrieve the user's results for a specific quiz. The response includes the score and a summary of answers.
 
 Endpoint: GET /api/quizzes/:quizId/results/:userId
-    ```bash
+    
+```bash
     {
     "id": "6778b58592190504b3d3a116",
     "title": "General Knowledge Quiz",
@@ -80,3 +94,4 @@ Endpoint: GET /api/quizzes/:quizId/results/:userId
             }
         ]
     }
+```
